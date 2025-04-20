@@ -1,4 +1,5 @@
 📌 Sobre o Projeto
+
 O Quero Doar! é uma plataforma que conecta doadores, pontos de coleta e beneficiários, facilitando a doação de alimentos, roupas e outros itens essenciais para pessoas em situação de vulnerabilidade.
 
 Nosso objetivo é promover a solidariedade, tornando mais fácil para doadores encontrarem locais de coleta próximos e para beneficiários acessarem os recursos de que precisam.
