@@ -5,6 +5,7 @@ O Quero Doar! é uma plataforma que conecta doadores, pontos de coleta e benefic
 Nosso objetivo é promover a solidariedade, tornando mais fácil para doadores encontrarem locais de coleta próximos e para beneficiários acessarem os recursos de que precisam.
 
 ✨ Funcionalidades
+
 ✅ Para Doadores:
 
 Encontrar pontos de coleta próximos
