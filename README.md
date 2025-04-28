@@ -30,7 +30,9 @@ Saber quais itens estão disponíveis
 
 Receber auxílio de forma organizada
 
-Requisitos para execução:
+
+
+#REQUISITOS PARA EXECUÇÃO:
 
 XAMPP instalado (versão mínima recomendada: 7.4 ou superior).
 
