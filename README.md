@@ -32,7 +32,7 @@ Receber auxílio de forma organizada
 
 
 
-#REQUISITOS PARA EXECUÇÃO:
+[REQUISITOS PARA EXECUÇÃO]
 
 XAMPP instalado (versão mínima recomendada: 7.4 ou superior).
 
