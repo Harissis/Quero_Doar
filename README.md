@@ -62,11 +62,6 @@ C:\xampp\htdocs\QueroDoar
 
 Abra o painel do XAMPP e inicie o Apache e o MySQL.
 
-Acesse o phpMyAdmin através do navegador: http://localhost/phpmyadmin.
-
-Crie um banco de dados (o nome pode ser querodoar ou conforme especificado no seu código).
-
-
 Acessar a aplicação
 
 No navegador, digite:
