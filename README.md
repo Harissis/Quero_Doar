@@ -1,74 +1,68 @@
-📌 Sobre o Projeto
+🎁 Quero Doar!
+Plataforma que conecta doadores, pontos de coleta e beneficiários, facilitando a doação de alimentos, roupas e outros itens essenciais para pessoas em situação de vulnerabilidade 💖
 
-O Quero Doar! é uma plataforma que conecta doadores, pontos de coleta e beneficiários, facilitando a doação de alimentos, roupas e outros itens essenciais para pessoas em situação de vulnerabilidade.
+🌟 Objetivo
+Promover a solidariedade 🤝, tornando mais fácil para:
 
-Nosso objetivo é promover a solidariedade, tornando mais fácil para doadores encontrarem locais de coleta próximos e para beneficiários acessarem os recursos de que precisam.
+🧑‍🤝‍🧑 Doadores encontrarem locais de coleta próximos
+
+🏠 Beneficiários acessarem os recursos de que precisam
 
 ✨ Funcionalidades
+🙋‍♂️ Para Doadores:
+📍 Encontrar pontos de coleta próximos
 
-✅ Para Doadores:
+📦 Visualizar itens mais necessitados
 
-Encontrar pontos de coleta próximos
+🗓️ Agendar doações
 
-Visualizar itens mais necessitados
+🏬 Para Pontos de Coleta:
+📝 Cadastrar locais de arrecadação
 
-Agendar doações
+📊 Gerenciar itens recebidos e necessidades
 
-✅ Para Pontos de Coleta:
+💬 Comunicar-se com doadores
 
-Cadastrar locais de arrecadação
+👨‍👩‍👧 Para Beneficiários:
+📌 Verificar pontos de distribuição mais próximos
 
-Gerenciar itens recebidos e necessidades
+🔍 Saber quais itens estão disponíveis
 
-Comunicar-se com doadores
+✅ Receber auxílio de forma organizada
 
-✅ Para Beneficiários:
+⚙️ Requisitos para Execução
+🖥️ XAMPP instalado (versão mínima recomendada: 7.4 ou superior)
 
-Verificar pontos de distribuição mais próximos
+🔥 Apache e 🐬 MySQL ativos no XAMPP
 
-Saber quais itens estão disponíveis
+🌐 Navegador atualizado (Google Chrome, Firefox, etc.)
 
-Receber auxílio de forma organizada
+🚀 Instalação e Execução
+1️⃣ Instalar o XAMPP
+📥 Baixe e instale: XAMPP - Apache Friends
 
+2️⃣ Clonar o Repositório ou Baixar
+Use Git:
 
+git clone [[seu-link-aqui](https://github.com/Harissis/Quero_Doar.git)]
+Ou baixe o projeto como .zip e extraia 📂
 
-[REQUISITOS PARA EXECUÇÃO]
-
-XAMPP instalado (versão mínima recomendada: 7.4 ou superior).
-
-PHP e MySQL ativos no XAMPP (Apache e MySQL).
-
-Navegador de internet atualizado (Google Chrome, Firefox, etc).
-
-Instalação e Execução
-Instalar o XAMPP
-
-Baixe e instale o XAMPP: https://www.apachefriends.org/pt_br/index.html
-
-Clonar o repositório
-
-Copie/clique no link do repositório e clone usando Git:
-
-
-git clone [[seu-link-aqui](https://github.com/Harissis/Quero_Doar)]
-Ou baixe o projeto como ZIP e extraia.
-
-Mover os arquivos para a pasta do XAMPP
-
+3️⃣ Mover os Arquivos
 Copie a pasta do projeto para:
+
 
 C:\xampp\htdocs\QueroDoar
 
+4️⃣ Iniciar o Servidor
+Abra o painel do XAMPP e inicie:
 
-Abra o painel do XAMPP e inicie o Apache e o MySQL.
+✅ Apache
 
-Acessar a aplicação
+✅ MySQL
 
-No navegador, digite:
+5️⃣ Acessar a Aplicação
+Abra o navegador e digite:
 
 http://localhost/QueroDoar
 
-
-
-
-
+💡 Dica: Para evitar erros, verifique se o nome da pasta está exatamente como “QueroDoar” e que os serviços Apache e MySQL estão rodando corretamente.
