@@ -2,40 +2,37 @@
 Plataforma que conecta doadores, pontos de coleta e beneficiários, facilitando a doação de alimentos, roupas e outros itens essenciais para pessoas em situação de vulnerabilidade 💖
 
 🌟 Objetivo
-Promover a solidariedade 🤝, tornando mais fácil para:
+Promover a solidariedade, tornando mais fácil para doadores encontrarem locais de coleta próximos e para beneficiários acessarem os recursos de que precisam.
 
-🧑‍🤝‍🧑 Doadores encontrarem locais de coleta próximos
-
-🏠 Beneficiários acessarem os recursos de que precisam
 
 ✨ Funcionalidades
-🙋‍♂️ Para Doadores:
-📍 Encontrar pontos de coleta próximos
+✅ Para Doadores
+Encontrar pontos de coleta próximos
 
-📦 Visualizar itens mais necessitados
+Visualizar itens mais necessitados
 
-🗓️ Agendar doações
+Agendar doações
 
-🏬 Para Pontos de Coleta:
-📝 Cadastrar locais de arrecadação
+✅ Para Pontos de Coleta
+Cadastrar locais de arrecadação
 
-📊 Gerenciar itens recebidos e necessidades
+Gerenciar itens recebidos e necessidades
 
-💬 Comunicar-se com doadores
+Comunicar-se com doadores
 
-👨‍👩‍👧 Para Beneficiários:
-📌 Verificar pontos de distribuição mais próximos
+✅ Para Beneficiários
+Verificar pontos de distribuição mais próximos
 
-🔍 Saber quais itens estão disponíveis
+Saber quais itens estão disponíveis
 
-✅ Receber auxílio de forma organizada
+Receber auxílio de forma organizada
 
 ⚙️ Requisitos para Execução
-🖥️ XAMPP instalado (versão mínima recomendada: 7.4 ou superior)
+XAMPP instalado (versão mínima recomendada: 7.4 ou superior)
 
-🔥 Apache e 🐬 MySQL ativos no XAMPP
+PHP e MySQL ativos no XAMPP (Apache e MySQL)
 
-🌐 Navegador atualizado (Google Chrome, Firefox, etc.)
+Navegador de internet atualizado (Google Chrome, Firefox, etc)
 
 🚀 Instalação e Execução
 1️⃣ Instalar o XAMPP
