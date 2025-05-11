@@ -45,12 +45,12 @@ Navegador de internet atualizado (Google Chrome, Firefox, etc)
 
 1️⃣ Instalar o XAMPP
 
-📥 Baixe e instale: XAMPP - Apache Friends
+📥 Baixe e instale: [XAMPP - Apache Friends] (https://www.apachefriends.org/pt_br/index.html)
 
 2️⃣ Clonar o Repositório ou Baixar
 Use Git:
 
-git clone [[seu-link-aqui](https://github.com/Harissis/Quero_Doar.git)]
+git clone (https://github.com/Harissis/Quero_Doar.git)
 
 Ou baixe o projeto como .zip e extraia 📂
 
