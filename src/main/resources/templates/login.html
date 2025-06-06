@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acessar conta</title>
+  <link rel="icon" th:href="@{/static/login/logocolorida.png}" type="image/png" />
+
+  <style>
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url('login/fonts/SegoeUI.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('login/fundo3.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 40px 50px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 600px;
+      transform: scale(0.85);
+      transform-origin: right center;
+      margin-left: auto;
+      margin-right: 10%;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-inner {
+      width: 100%;
+      position: relative;
+    }
+    h1 {
+      text-align: left;
+      margin-bottom: 30px;
+      color: #000000;
+      font-weight: 630;
+      font-size: 28px;
+      font-family: 'Segoe UI';
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #5a5a5a;
+    }
+    .input-field {
+      width: 100%;
+      height: 44px;
+      padding: 10px 12px;
+      padding-left: 40px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .icon-email {
+      position: absolute;
+      top: 155px;
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.6;
+    }
+    .icon-senha {
+      position: absolute;
+      top: 239px;
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.6;
+    }
+    #olhoSenha {
+      position: absolute;
+      right: 12px;
+      top: 239px;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      opacity: 0.6;
+      display: none;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #888;
+      margin: 20px 0;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+    .divider:not(:empty)::before {
+      margin-right: .75em;
+    }
+    .divider:not(:empty)::after {
+      margin-left: .75em;
+    }
+    .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .social-buttons button {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .social-buttons img {
+      width: 18px;
+      height: 18px;
+    }
+    button[type="submit"] {
+      background-color: #fa5058;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 13px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .link-option {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #919191;
+    }
+    .link-option a {
+      color: #0057ff;
+      text-decoration: none;
+    }
+  </style>
+
+
+
+
+  <script>
+    function toggleSenha() {
+      const senhaInput = document.getElementById('senha');
+      senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const senhaInput = document.getElementById('senha');
+      const olhoIcone = document.getElementById('olhoSenha');
+      senhaInput.addEventListener('input', function () {
+        olhoIcone.style.display = this.value.length > 0 ? 'block' : 'none';
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <a th:href="@{/}" style="position: absolute; top: 50px; left: 50px; z-index: 10;">
+    <img th:src="@{/login/logo_quero_doar_cortada.png}" alt="Logo" style="height: 40px; cursor: pointer;">
+  </a>
+
+  <div class="form-container">
+    <div class="form-inner">
+
+      <img th:src="@{/login/email.svg}" alt="ícone email" class="icon-email">
+      <img th:src="@{/login/cadeado.svg}" alt="ícone senha" class="icon-senha">
+      <img id="olhoSenha" th:src="@{/login/olho_aberto.svg}" alt="Mostrar senha" onclick="toggleSenha()">
+
+      <a th:href="@{/}" style="display: inline-flex; align-items: center; font-size: 17px; color: #000000; text-decoration: none; font-weight: 500; margin-bottom: 20px;">
+        <span style="font-size: 17px; margin-right: 6px;">&lt;</span>
+        <span>Voltar ao início</span>
+      </a>
+
+      <h1>Acessar sua conta</h1>
+      
+      
+      
+  <div th:if="${mensagemSucesso}" style="background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 14px;">
+   <p th:text="${mensagemSucesso}" style="margin: 0;"></p>
+  </div>
+      <form method="post" th:action="@{/login}">
+      
+   
+      
+      
+        <label for="email">Email</label>
+        <input type="email" id="email" name="username" class="input-field" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="password" class="input-field" required>
+
+        <div style="text-align: right; margin-top: -16px; margin-bottom: 16px;">
+          <a th:href="@{/recuperar_senha}" style="font-size: 13px; color: #3399ff; text-decoration: none;">Esqueceu a senha?</a>
+        </div>
+
+        <div class="divider">ou entre com</div>
+
+        <div class="social-buttons">
+          <button type="button">
+            <img th:src="@{/login/icone_google.png}" alt="Google Icon">Entrar com Google
+          </button>
+          <button type="button">
+            <img th:src="@{/login/icone_apple.png}" alt="Apple Icon">Entrar com Apple
+          </button>
+        </div>
+
+        <button type="submit">Fazer login</button>
+      </form>
+
+      <div class="link-option">
+        Não possui uma conta? <a th:href="@{/cadastro}">Cadastre-se</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

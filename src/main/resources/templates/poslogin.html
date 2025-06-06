@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+New Event
+http://www.templatemo.com/tm-486-new-event
+-->
+<title>Quero Doar! - Início</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="icon" type="image/png" th:href="@{/homepage/images/logocolorida.png}">
+
+
+<link rel="stylesheet" th:href="@{/homepage/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/homepage/css/animate.css}">
+<link rel="stylesheet" th:href="@{/homepage/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/homepage/css/owl.theme.css}">
+<link rel="stylesheet" th:href="@{/homepage/css/owl.carousel.css}">
+
+<!-- Main css -->
+<link rel="stylesheet" th:href="@{/homepage/css/style.css}">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div class="preloader">
+
+	<div class="sk-rotating-plane"></div>
+	
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION LINKS     
+============================== -->
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+  <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="icon icon-bar"></span>
+    <span class="icon icon-bar"></span>
+    <span class="icon icon-bar"></span>
+  </button>
+  <a href="#" class="navbar-brand">
+    <img th:src="@{/homepage/images/logo_quero_doar_cortada.png}" alt="" style="height:40px;">
+  </a>
+</div>
+
+
+		<div class="collapse navbar-collapse">
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#intro" class="smoothScroll">INÍCIO</a></li>
+				<li><a href="#overview" class="smoothScroll">SOBRE NÓS</a></li>
+				<li><a href="#speakers" class="smoothScroll">AÇÕES</a></li>
+				<li><a href="#program" class="smoothScroll">CONTATO</a></li>
+				<li><a th:href="@{/homepage}"class="smoothScroll">DOAR AGORA</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+</div>
+
+
+<!-- =========================
+    INTRO SECTION   
+============================== -->
+<section id="intro" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<h3 class="wow bounceIn" data-wow-delay="0.9s">De 07 a 14 de Julho Anápolis, GO</h3>
+				<h1 class="wow fadeInUp" data-wow-delay="1.6s">Campanha Nacional de Doação.</h1>
+				<a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="2.3s">SAIBA MAIS</a>
+				<a href="#register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">DOAR AGORA</a>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    OVERVIEW SECTION   
+============================== -->
+<section id="overview" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+				<h3>Quero Doar! – Conectando Solidariedade e Necessidade.</h3>
+				<p>O Quero Doar! é uma plataforma solidária que conecta doadores, pontos de coleta e pessoas em situação de vulnerabilidade social para facilitar a doação de bens não perecíveis, como roupas, calçados, utensílios e itens de higiene.</p>
+				<p>Nosso objetivo é simplificar e incentivar o ato de doar, tornando o processo acessível, transparente e eficiente. Acreditamos que pequenas ações transformam realidades, por isso criamos um ambiente digital leve, intuitivo e inclusivo.</p>
+			</div>
+					
+			<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+				<img th:src="@{/homepage/images/sobre-nos.jpg}" class="img-responsive" alt="Overview">
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    DETAIL SECTION   
+============================== -->
+<section id="detail" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInLeft col-md-4 col-sm-4" data-wow-delay="0.3s">
+				<i class="fa fa-group"></i>
+				<h3>+ de 3000 Vidas Impactadas</h3>
+				<p>Em 2024, mais de 4 mil pessoas em situação de vulnerabilidade tiveram suas vidas transformadas graças às doações recebidas.</p>
+			</div>
+
+			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
+  <img th:src="@{/homepage/images/icone-localizacao.png}" alt="Ícone Coleta" style="width: 50px; height: 50px;">
+  <h3>36 Pontos de Coleta</h3>
+  <p>Espalhados em diversas regiões, nossos pontos de coleta tornam o ato de doar ainda mais fácil, prático e acessível.</p>
+</div>
+
+			<div class="wow fadeInRight col-md-4 col-sm-4" data-wow-delay="0.9s">
+  <img th:src="@{/homepage/images/icone-doacao.png}" alt="Ícone Caixa" style="width: 50px; height: 50px;">
+  <h3>12.350 Itens Doados</h3>
+  <p>Mais de 12 mil itens já foram doados por pessoas como você, transformando solidariedade em ações reais em todo o país.</p>
+</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    VIDEO SECTION   
+============================== -->
+<section id="video" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.3s">
+				<h2>VOZES INVISÍVEIS, REALIDADES ESCONDIDAS</h2>
+				<h3>Pessoas como Maria enfrentam não apenas a pobreza, mas a indiferença. São vidas ignoradas pela sociedade, silenciadas pelo descaso e esquecidas pelo poder público.</h3>
+				<p class="texto-impacto">Compreender suas histórias é o primeiro passo para enxergar o que muitos fingem não ver — e agir para transformar.</p>
+			</div>
+			<div class="wow fadeInUp col-md-6 col-sm-10" data-wow-delay="1.6s">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Fb_Z-Ty1Eh4" allowfullscreen></iframe>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<!-- =========================
+    SPEAKERS SECTION   
+============================== -->
+<section id="speakers" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 wow bounceIn">
+				<div class="section-title">
+					<h2>Ações recentes</h2>
+					<p>Acompanhe os principais eventos e ações que levaram esperança a quem mais precisa.</p>
+				</div>
+			</div>
+
+			<!-- Testimonial Owl Carousel section
+			================================================== -->
+			<div id="owl-speakers" class="owl-carousel">
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+					<div class="speakers-wrapper">
+						<img th:src="@{/homepage/images/camp3.jpg}" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3>Campanha do Agasalho</h3>
+								<h6>UniEVANGÉLICA – Junho/2024</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img th:src="@{/homepage/images/camp5.jpg}"class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3>Mutirão da Solidariedade</h3>
+								<h6>CRAS Anápolis – Abril/2024</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+					<div class="speakers-wrapper">
+						<img th:src="@{/homepage/images/camp2.jpg}" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3>Conexão Solidária</h3>
+								<h6>Centro POP – Julho/2024</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img th:src="@{/homepage/images/camp4.jpg}" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3>Doe Amor, Doe Esperança</h3>
+								<h6>APAE Anápolis – Março/2024</h6>
+							</div>
+					</div>
+				</div>
+
+				<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+					<div class="speakers-wrapper">
+						<img th:src="@{/homepage/images/camp1.jpg}" class="img-responsive" alt="speakers">
+							<div class="speakers-thumb">
+								<h3>Mãos que Ajudam</h3>
+								<h6>OVG Anápolis – Maio/2024</h6>
+							</div>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+	
+	
+	
+	<!-- =========================
+     SCRIPTS   
+============================== -->
+<script th:src="@{/homepage/js/jquery.js}"></script>
+<script th:src="@{/homepage/js/bootstrap.min.js}"></script>
+<script th:src="@{/homepage/js/jquery.parallax.js}"></script>
+<script th:src="@{/homepage/js/owl.carousel.min.js}"></script>
+<script th:src="@{/homepage/js/smoothscroll.js}"></script>
+<script th:src="@{/homepage/js/wow.min.js}"></script>
+<script th:src="@{/homepage/js/custom.js}"></script>
+</section>

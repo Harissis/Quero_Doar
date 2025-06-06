@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\logocolorida.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crie sua conta</title>
+  <style>
+    .login-button {
+      background: transparent;
+      border: 1.5px solid white;
+      color: white;
+      padding: 12px 50px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      width: fit-content;
+    }
+    .login-button:hover {
+      background: white;
+      color: #fa5058;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+    }
+    .left {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #fa5058;
+      position: relative;
+    }
+    .right {
+      flex: 2;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 0;
+      width: 100%;
+      max-width: 650px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fa5058;
+      font-weight: 600;
+      font-size: 28px;
+      font-family: 'Berlin Sans FB', sans-serif;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+    .input-icon {
+      position: relative;
+    }
+    .input-icon img.icon-left {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      opacity: 0.6;
+    }
+    .input-icon input,
+    .input-icon select {
+      width: 100%;
+      padding: 8px 12px 8px 42px;
+      border: none;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #333;
+    }
+    input:focus, select:focus {
+      outline: 2px solid #fa5058;
+      background-color: #fff;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    button[type="submit"] {
+      background-color: #fa5058;
+      color: white;
+      padding: 10px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      grid-column: span 2;
+      justify-self: center;
+      width: fit-content;
+      transition: background 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #e13c44;
+    }
+    #mensagemDoacao {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      display: inline-block;
+      white-space: pre-line;
+    }
+  </style>
+  <script>
+    function formatCpfCnpj(input) {
+      let value = input.value.replace(/\D/g, '').slice(0, 14);
+      if (value.length <= 11) {
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      } else {
+        value = value.replace(/(\d{2})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d)/, '$1/$2');
+        value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+      }
+      input.value = value.slice(0, 18);
+    }
+
+    function formatCep(input) {
+      let value = input.value.replace(/\D/g, '').slice(0, 8);
+      value = value.replace(/(\d{5})(\d{1,3})$/, '$1-$2');
+      input.value = value;
+    }
+
+    function toggleSenha() {
+      const senhaInput = document.getElementById('senha');
+      senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const estadoSelect = document.getElementById('estado');
+      const cidadeSelect = document.getElementById('cidade');
+      const cidadesPorEstado = {
+        GO: ['Goiânia', 'Aparecida de Goiânia', 'Anápolis', 'Rio Verde'],
+        MT: ['Cuiabá', 'Várzea Grande', 'Rondonópolis', 'Sinop']
+      };
+
+      estadoSelect.addEventListener('change', function () {
+        const estadoSelecionado = this.value;
+        cidadeSelect.innerHTML = '<option value="">Selecione uma cidade</option>';
+        if (cidadesPorEstado[estadoSelecionado]) {
+          cidadesPorEstado[estadoSelecionado].forEach(function (cidade) {
+            const option = document.createElement('option');
+            option.value = cidade;
+            option.textContent = cidade;
+            cidadeSelect.appendChild(option);
+          });
+        }
+      });
+
+      const senhaInput = document.getElementById('senha');
+      const olhoIcone = document.getElementById('olhoSenha');
+      senhaInput.addEventListener('input', function () {
+        olhoIcone.style.display = this.value.length > 0 ? 'block' : 'none';
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="left">
+    <!-- Logo cortada no canto superior direito -->
+    <a href="index.html" style="position: absolute; top: 35px; left: 50%; transform: translateX(-50%); z-index: 10;">
+  <img src="C:/Users/Luiz Felipe/Desktop/icones_tela_cadastro/logo_quero_doar_cortada.png"
+       alt="Logo - Página Inicial"
+       style="width: 150px;">
+</a>
+    <!-- Texto com margem para não sobrepor a logo -->
+    <div id="mensagensTexto" style="width: 100%; display: flex; align-items: center; justify-content: center; text-align: left; padding: 40px; margin-top: 150px;">
+      <h2 id="mensagemDoacao" style="font-weight: 200; font-family: 'Segoe UI Light', 'Segoe UI', sans-serif; font-size: 30px; max-width: 80%; line-height: 1.5; color: white;">Pequenos gestos podem gerar grandes mudanças.</h2>
+    </div>
+
+    <div style="width: 100%; display: flex; justify-content: space-between; padding: 20px 30px; box-sizing: border-box; font-size: 14px; color: white;">
+      <a href="#" style="text-decoration: none; color: white;">← Voltar ao início</a>
+      <a href="#" style="text-decoration: none; color: white;">Já tenho login</a>
+    </div>
+  </div>
+
+  <script>
+    const mensagens = [
+      'Doe com o coração e faça a <span style="font-weight: 500;">diferença</span> na vida de alguém.',
+      'Pequenos gestos podem gerar grandes <span style="font-weight: 500;">mudanças</span>.',
+      'A solidariedade <span style="font-weight: 500;">transforma</span> realidades.'
+    ];
+
+    let indice = 0;
+    const el = document.getElementById('mensagemDoacao');
+
+    function mostrarMensagemSwap() {
+      el.style.transform = 'translateX(100%)';
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.innerHTML = mensagens[indice];
+        el.style.transition = 'none';
+        el.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+          el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+          el.style.transform = 'translateX(0)';
+          el.style.opacity = 1;
+        }, 50);
+        indice = (indice + 1) % mensagens.length;
+      }, 400);
+    }
+
+    setInterval(mostrarMensagemSwap, 8000);
+    mostrarMensagemSwap();
+    mostrarMensagemSwap();
+  </script>
+
+  <div class="right">
+    <div class="form-container">
+      <h1>Crie sua conta</h1>
+      <form id="formCadastro">
+        <div class="form-grid">
+          <div class="full-width">
+            <label for="nomeCompleto">Nome completo</label>
+            <div class="input-icon">
+              <img class="icon-left" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\nome.svg" alt="icone nome completo">
+              <input type="text" id="nomeCompleto" name="nomeCompleto" required oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
+            </div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <div class="input-icon">
+              <img class="icon-left" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\email.svg" alt="icone email">
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div>
+            <label for="senha">Senha</label>
+            <div class="input-icon">
+              <img class="icon-left" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\cadeado.svg" alt="icone senha">
+              <input type="password" id="senha" name="senha" required>
+              <img id="olhoSenha" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\olho_aberto.svg" alt="Mostrar senha"
+                   onclick="toggleSenha()"
+                   style="display: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; cursor: pointer; opacity: 0.6;">
+            </div>
+          </div>
+          <div>
+            <label for="cpfCnpj">CPF ou CNPJ</label>
+            <div class="input-icon">
+              <img class="icon-left" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\cpfcnpj.svg" alt="icone documento">
+              <input type="text" id="cpfCnpj" name="cpfCnpj" maxlength="18" required oninput="formatCpfCnpj(this)">
+            </div>
+          </div>
+          <div>
+            <label for="cep">CEP</label>
+            <div class="input-icon">
+              <img class="icon-left" src="C:\Users\Luiz Felipe\Desktop\icones_tela_cadastro\localização.svg" alt="icone cep">
+              <input type="text" id="cep" name="cep" maxlength="9" oninput="formatCep(this)">
+            </div>
+          </div>
+          <div>
+            <label for="estado">Estado</label>
+            <div class="input-icon">
+              <select id="estado" name="estado" required style="padding-left:14px;">
+                <option value="">Selecione o estado</option>
+                <option value="GO">Goiás</option>
+                <option value="MT">Mato Grosso</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="cidade">Cidade</label>
+            <div class="input-icon">
+              <select id="cidade" name="cidade" required style="padding-left:14px; display: block; height: 38px;">
+                <option value="">Selecione uma cidade</option>
+              </select>
+            </div>
+          </div>
+          <p style="font-size: 13px; margin-top: 10px; margin-bottom: 0; color: #333; grid-column: span 2; text-align: left;">Ao clicar em Cadastrar, você concorda com nossos <a href="#" style="color: #3399ff; text-decoration: none;">Termos, Política de Privacidade</a>.</p>
+          <div style="margin-top: 20px; grid-column: span 2; justify-self: center;">
+            <button type="submit">Cadastrar</button>
+          </div>
+          <p style="grid-column: span 2; text-align: center; margin-top: 10px; font-size: 14px;">Já possui uma conta? <a href="#" style="color: #3399ff; text-decoration: none;">Faça login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

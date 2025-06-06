@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doar Agora</title>
+  <link rel="icon" th:href="@{/doacao/logocolorida.png}" type="image/png">
+  <style>
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url('/doacao/fonts/SegoeUI.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .logo-link {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      z-index: 10;
+    }
+
+    .logo-img {
+      height: 40px;
+      cursor: pointer;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.719);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 20px auto 20px 800px;
+    }
+
+    .form-container h2 {
+      text-align: left;
+      margin-bottom: 30px;
+      color: #000000;
+      font-weight: 640;
+      font-size: 23px;
+      font-family: 'Segoe UI';
+    }
+
+    .success-message {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      padding: 7px 10px;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #fa5058;
+    }
+
+    .submit-btn {
+      width: 300px;
+      padding: 12px;
+      background-color: #fa5058;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .submit-btn:hover {
+      background-color: #fa5058;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .form-container h2 {
+        font-size: 20px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea,
+      .submit-btn {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body th:style="'background: url(' + @{/doacao/background.jpg} + ') no-repeat center center/cover;'">
+  <a th:href="@{/index.html}" class="logo-link">
+    <img th:src="@{/doacao/logo_quero_doar_cortada.png}" alt="Logo Quero Doar" class="logo-img">
+  </a>
+  <div class="form-container">
+    <h2>Cadastro de Doações</h2>
+    <div id="successMessage" class="success-message">Doação enviada com sucesso!</div>
+    <form id="donationForm">
+      <div class="form-group">
+        <input type="text" id="itemName" placeholder="Nome do item" required />
+      </div>
+
+      <div class="form-group">
+        <select id="condition" required>
+          <option value="" disabled selected>Condição</option>
+          <option value="Muito bom">Muito bom</option>
+          <option value="Bom">Bom</option>
+          <option value="Médio">Médio</option>
+          <option value="Ruim">Ruim</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select id="category" required>
+          <option value="" disabled selected>Categoria</option>
+          <option value="Roupas">Roupas</option>
+          <option value="Alimentos">Alimentos</option>
+          <option value="Brinquedos">Brinquedos</option>
+          <option value="Higiene">Produtos de Higiene</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="size" placeholder="Tamanho (ex: P, M, G ou numérico)" />
+      </div>
+
+      <div class="form-group">
+        <select id="gender">
+          <option value="" disabled selected>Gênero</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Unissex">Unissex</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="quantity" placeholder="Quantidade" required />
+      </div>
+
+      <div class="form-group">
+        <select id="deliveryLocation" required>
+          <option value="" disabled selected>Local de entrega</option>
+          <option value="UniEvangélica">UniEvangélica</option>
+          <option value="CRAS Filostro">CRAS Filostro</option>
+          <option value="Centro POP">Centro POP</option>
+          <option value="APAE">APAE</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <textarea id="observations" placeholder="Observações"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Enviar Doação</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("donationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 5000);
+    });
+  </script>
+</body>
+
+</html>
